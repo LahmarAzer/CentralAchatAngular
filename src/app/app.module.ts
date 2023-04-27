@@ -24,7 +24,8 @@ import { AddproductComponent } from './backOffice/shopAdmin/addproduct/addproduc
 import { ReactiveFormsModule } from '@angular/forms';
 import { ModifyproductComponent } from './backOffice/shopAdmin/modifyproduct/modifyproduct.component';
 import { ListproductsComponent } from './backOffice/shopAdmin/listproducts/listproducts.component';
-
+import { NgxPaginationModule } from 'ngx-pagination';
+import { DetailsproductComponent } from './frontOffice/shop/detailsproduct/detailsproduct.component';
 
 @NgModule({
   declarations: [
@@ -46,14 +47,16 @@ import { ListproductsComponent } from './backOffice/shopAdmin/listproducts/listp
     ProductsComponent,
     AddproductComponent,
     ModifyproductComponent,
-    ListproductsComponent
+    ListproductsComponent,
+    DetailsproductComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule 
+    ReactiveFormsModule,
+    NgxPaginationModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,12 +1,14 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Product } from 'src/app/frontOffice/model/Product';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ShopServiceService {
 
+  
   constructor(private http:HttpClient) { }
 
   getProducts():Observable<any[]>{
@@ -43,6 +45,11 @@ export class ShopServiceService {
 
   deleteProduct(idProduct: number, idUser: number): Observable<void> {
     return this.http.delete<void>(`http://localhost:9009/store/product/deleteProduct/${idProduct}/${idUser}`);
+  }
+ 
+  getProductById(productId: number): Observable<Product> {
+    const url =  `http://localhost:9009/store/product/getproductbyid/${productId}`;
+    return this.http.get<Product>(url);
   }
  
   

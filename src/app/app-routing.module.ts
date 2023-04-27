@@ -12,6 +12,7 @@ import { ProductsComponent } from './frontOffice/shop/products/products.componen
 import { AddproductComponent } from './backOffice/shopAdmin/addproduct/addproduct.component';
 import { ModifyproductComponent } from './backOffice/shopAdmin/modifyproduct/modifyproduct.component';
 import { ListproductsComponent } from './backOffice/shopAdmin/listproducts/listproducts.component';
+import { DetailsproductComponent } from './frontOffice/shop/detailsproduct/detailsproduct.component';
 
 const routes: Routes = [{
 
@@ -78,6 +79,10 @@ const routes: Routes = [{
     {
       path:'shop',
       component: ProductsComponent
+    },
+    {
+       path:'detailproduct/:id',
+      component: DetailsproductComponent
     }
     
   ]

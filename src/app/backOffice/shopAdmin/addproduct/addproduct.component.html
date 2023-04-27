@@ -1,35 +1,4 @@
-<!---
-<form #fr="ngForm" (ngSubmit)="Submit(fr)">
-    <div class="mb-3">
-      <label for="descriptionProduct" class="form-label">descriptionProduct</label>
-      <input type="text" name="descriptionProduct" class="form-control" [(ngModel)]="descriptionProduct" id="descriptionProduct">
-    </div>
-    <div class="mb-3">
-      <label for="priceProduct" class="form-label">priceProduct</label>
-      <input type="text" name="priceProduct" class="form-control" [(ngModel)]="priceProduct" id="priceProduct">
-    </div>
-    <div class="mb-3">
-      <label for="quantityProduct" class="form-label">quantityProduct</label>
-      <input type="text" name="quantityProduct" class="form-control" [(ngModel)]="quantityProduct" id="quantityProduct">
-    </div>
-    <div class="mb-3">
-      <label for="nameProduct" class="form-label">nameProduct</label>
-      <input type="text" name="nameProduct" class="form-control" [(ngModel)]="nameProduct" id="nameProduct">
-    </div>
-    <div class="mb-3">
-      <label for="referenceProduct" class="form-label">referenceProduct</label>
-      <input type="text" name="referenceProduct" class="form-control" [(ngModel)]="referenceProduct" id="referenceProduct">
-    </div>
-
-    <div class="mb-3">
-      <label for="marqueProduct" class="form-label">marqueProduct</label>
-      <input type="text" name="marqueProduct" class="form-control" [(ngModel)]="marqueProduct" id="marqueProduct">
-    </div>
-
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>  -->
-
-<!-- addproduct.component.html -->
+<!--
 <h1>Ajouter un produit</h1>
 
 <form [formGroup]="ngForm" (ngSubmit)="onsubmit()">
@@ -89,6 +58,76 @@
 
   <button type="submit">Ajouter</button>
 </form>
-
-
-
+-->
+<div class="container">
+    <div class="text-center mt-5">
+      <h1>Ajouter un produit</h1>
+    </div>
+  
+    <div class="row">
+      <div class="col-lg-7 mx-auto">
+        <div class="card mt-2 mx-auto p-4 bg-light">
+          <div class="card-body bg-light">
+            <form [formGroup]="ngForm" (ngSubmit)="onsubmit()">
+              <div class="form-group">
+                <label>Nom du produit:</label>
+                <input type="text" formControlName="nameProduct" class="form-control" />
+              </div>
+  
+              <div class="form-group">
+                <label>Référence du produit:</label>
+                <input type="text" formControlName="referenceProduct" class="form-control" />
+              </div>
+  
+              <div class="form-group">
+                <label>Catégorie:</label>
+                <select formControlName="idCategory" class="form-control">
+                  <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
+                </select>
+              </div>
+  
+              <div class="form-group">
+                <label>Sous-catégorie:</label>
+                <select formControlName="idSousCategory" class="form-control">
+                  <option *ngFor="let sousCategory of sousCategories" [value]="sousCategory.id">{{ sousCategory.name }}</option>
+                </select>
+              </div>
+  
+              <div class="form-group">
+                <label>Description:</label>
+                <textarea formControlName="descriptionProduct" class="form-control"></textarea>
+              </div>
+  
+              <div class="form-group">
+                <label>Prix:</label>
+                <input type="number" formControlName="priceProduct" class="form-control" />
+              </div>
+  
+              <div class="form-group">
+                <label>Quantité:</label>
+                <input type="number" formControlName="quantityProduct" class="form-control" />
+              </div>
+  
+              <div class="form-group">
+                <label>Marque:</label>
+                <input type="text" formControlName="marqueProduct" class="form-control" />
+              </div>
+  
+              <div class="form-group">
+                <label>Remise:</label>
+                <input type="number" formControlName="discountProduct" class="form-control" />
+              </div>
+  
+              <div class="form-group">
+                <label>Image:</label>
+                <input type="file" (change)="onFileSelected($event)" class="form-control" />
+              </div>
+  
+              <button type="submit" class="btn btn-primary">Ajouter</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

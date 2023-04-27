@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ShopServiceService } from 'src/app/Service/shopService/shop-service.service';
 
 
@@ -10,7 +11,7 @@ import { ShopServiceService } from 'src/app/Service/shopService/shop-service.ser
   styleUrls: ['./addproduct.component.css']
 })
 export class AddproductComponent {
-  constructor(private shopService: ShopServiceService ,private fb: FormBuilder,private http: HttpClient) { }
+  constructor(private shopService: ShopServiceService ,private fb: FormBuilder,private http: HttpClient,private router: Router) { }
  
   ngForm!: FormGroup;
   categories = [
@@ -97,6 +98,7 @@ export class AddproductComponent {
         console.log(data);
         console.error;
       });
+      this.router.navigate(['/admin/listproducts']);
   }
   
 }
