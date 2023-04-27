@@ -1,4 +1,34 @@
-<section role="main" class="content-body card-margin" style="width: 2400px;">
+<section role="main" class="content-body card-margin">
+	<div class="row">
+	  <div class="col-lg-12">
+		<div class="row">
+		  <div class="col-md-4" *ngFor="let prod of products">
+			<div class="card mb-4 box-shadow">
+				<img class="card-img-top" [src]="getImage(prod)" alt="{{prod.nameProduct}}">
+				<div class="card-body">
+				<h5 class="card-title">{{prod.nameProduct}}</h5>
+				<p class="card-text">{{prod.descriptionProduct}}</p>
+				<p class="card-text">{{prod.priceProduct}}€</p>
+				<div class="d-flex justify-content-between align-items-center">
+				  <div class="btn-group">
+					<a [routerLink]="['/products', prod.idProduct]" class="btn btn-sm btn-outline-secondary">Voir les détails</a>
+				  </div>
+				  <small class="text-muted">{{prod.referenceProduct}}</small>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  </section>
+  
+  
+
+
+
+
+<!--<section role="main" class="content-body card-margin" style="width: 2400px;">
     <div class="row">
       <div class="col-lg-6">
         <section class="card">
@@ -21,9 +51,9 @@
                   <th>referenceProduct</th>
                    <!--<th>imageProduct</th> -->
                    <!--<th>discountProduct</th> -->
-                  <th>marqueProduct</th>
+                  <!--<th>marqueProduct</th>-->
                   <!--<th>dateCreationProduct</th>-->
-
+               <!--
                 </tr>
               </thead>
               <tbody>
@@ -36,9 +66,9 @@
                   <td>{{prod.referenceProduct}}</td>
                   <!--<td>{{prod.imageProduct}}</td>-->
                   <!--<td>{{prod.discountProduct}}</td>-->
-                  <td>{{prod.marqueProduct}}</td>
+                 <!--td>{{prod.marqueProduct}}</td>-->
                  <!--<td>{{prod.dateCreationProduct}}</td> -->
-                </tr>
+               <!-- </tr>
     
               </tbody>
             </table>
@@ -48,5 +78,6 @@
     
     </div>
     
-    </section>
+    </section>-->
     
+
