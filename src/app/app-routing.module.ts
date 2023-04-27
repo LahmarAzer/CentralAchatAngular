@@ -11,6 +11,7 @@ import { AdduserComponent } from './backOffice/user/adduser/adduser.component';
 import { ProductsComponent } from './frontOffice/shop/products/products.component';
 import { AddproductComponent } from './backOffice/shopAdmin/addproduct/addproduct.component';
 import { ModifyproductComponent } from './backOffice/shopAdmin/modifyproduct/modifyproduct.component';
+import { ListproductsComponent } from './backOffice/shopAdmin/listproducts/listproducts.component';
 
 const routes: Routes = [{
 
@@ -45,6 +46,10 @@ const routes: Routes = [{
     {
       path:'modifyproduct',
       component:ModifyproductComponent
+    },
+    {
+      path:'listproducts',
+      component:ListproductsComponent
     }
   ]
 

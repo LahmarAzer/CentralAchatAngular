@@ -23,6 +23,7 @@ import { ProductsComponent } from './frontOffice/shop/products/products.componen
 import { AddproductComponent } from './backOffice/shopAdmin/addproduct/addproduct.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ModifyproductComponent } from './backOffice/shopAdmin/modifyproduct/modifyproduct.component';
+import { ListproductsComponent } from './backOffice/shopAdmin/listproducts/listproducts.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { ModifyproductComponent } from './backOffice/shopAdmin/modifyproduct/mod
     AdduserComponent,
     ProductsComponent,
     AddproductComponent,
-    ModifyproductComponent
+    ModifyproductComponent,
+    ListproductsComponent
   ],
   imports: [
     BrowserModule,

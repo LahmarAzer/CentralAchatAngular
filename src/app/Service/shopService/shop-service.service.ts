@@ -41,4 +41,9 @@ export class ShopServiceService {
     return this.http.post<any>("http://localhost:9009/store/product/addproduit", formData, httpOptions);
   }
 
+  deleteProduct(idProduct: number, idUser: number): Observable<void> {
+    return this.http.delete<void>(`http://localhost:9009/store/product/deleteProduct/${idProduct}/${idUser}`);
+  }
+ 
+  
   }
