@@ -13,6 +13,7 @@ import { AddproductComponent } from './backOffice/shopAdmin/addproduct/addproduc
 import { ModifyproductComponent } from './backOffice/shopAdmin/modifyproduct/modifyproduct.component';
 import { ListproductsComponent } from './backOffice/shopAdmin/listproducts/listproducts.component';
 import { DetailsproductComponent } from './frontOffice/shop/detailsproduct/detailsproduct.component';
+import { RecommandedproductsComponent } from './frontOffice/shop/recommandedproducts/recommandedproducts.component';
 
 const routes: Routes = [{
 
@@ -83,7 +84,11 @@ const routes: Routes = [{
     {
        path:'detailproduct/:id',
       component: DetailsproductComponent
-    }
+    },
+    {
+      path:'recommandedproducts',
+     component: RecommandedproductsComponent
+   }
     
   ]
 }

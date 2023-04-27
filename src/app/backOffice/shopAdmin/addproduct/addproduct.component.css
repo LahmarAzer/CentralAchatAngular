@@ -27,3 +27,21 @@ label {
 	margin-left: 10px;
 	margin-right: 10px;
 }
+.center-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90hv;
+  }
+  @media (min-width: 768px) {
+    .col-md-6 {
+      width: 50%;
+      float: left;
+    }
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  

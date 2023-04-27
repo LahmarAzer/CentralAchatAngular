@@ -26,6 +26,8 @@ import { ModifyproductComponent } from './backOffice/shopAdmin/modifyproduct/mod
 import { ListproductsComponent } from './backOffice/shopAdmin/listproducts/listproducts.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { DetailsproductComponent } from './frontOffice/shop/detailsproduct/detailsproduct.component';
+import { RecommandedproductsComponent } from './frontOffice/shop/recommandedproducts/recommandedproducts.component';
+import { QrCodeServiceComponent } from './frontOffice/shop/qr-code-service/qr-code-service.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +51,8 @@ import { DetailsproductComponent } from './frontOffice/shop/detailsproduct/detai
     ModifyproductComponent,
     ListproductsComponent,
     DetailsproductComponent,
+    RecommandedproductsComponent,
+    QrCodeServiceComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,7 +60,7 @@ import { DetailsproductComponent } from './frontOffice/shop/detailsproduct/detai
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    NgxPaginationModule 
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

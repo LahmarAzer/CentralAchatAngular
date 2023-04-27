@@ -1,133 +1,71 @@
-<!--
-<h1>Ajouter un produit</h1>
-
-<form [formGroup]="ngForm" (ngSubmit)="onsubmit()">
-  <div>
-    <label>Nom du produit:</label>
-    <input type="text" formControlName="nameProduct" />
-  </div>
-
-  <div>
-    <label>Référence du produit:</label>
-    <input type="text" formControlName="referenceProduct" />
-  </div>
-
-  <div>
-    <label>Catégorie:</label>
-    <select formControlName="idCategory">
-      <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
-    </select>
-  </div>
-  
-  <div>
-    <label>Sous-catégorie:</label>
-    <select formControlName="idSousCategory">
-      <option *ngFor="let sousCategory of sousCategories" [value]="sousCategory.id">{{ sousCategory.name }}</option>
-    </select>
-  </div>
-
-  <div>
-    <label>Description:</label>
-    <textarea formControlName="descriptionProduct"></textarea>
-  </div>
-
-  <div>
-    <label>Prix:</label>
-    <input type="number" formControlName="priceProduct" />
-  </div>
-
-  <div>
-    <label>Quantité:</label>
-    <input type="number" formControlName="quantityProduct" />
-  </div>
-
-  <div>
-    <label>Marque:</label>
-    <input type="text" formControlName="marqueProduct" />
-  </div>
-
-  <div>
-    <label>Remise:</label>
-    <input type="number" formControlName="discountProduct" />
-  </div>
-
-  <div>
-    <label>Image:</label>
-    <input type="file" (change)="onFileSelected($event)" />
-  </div>
-
-  <button type="submit">Ajouter</button>
-</form>
--->
+<div class="card">
 <div class="container">
-    <div class="text-center mt-5">
-      <h1>Ajouter un produit</h1>
-    </div>
-  
-    <div class="row">
-      <div class="col-lg-7 mx-auto">
-        <div class="card mt-2 mx-auto p-4 bg-light">
-          <div class="card-body bg-light">
-            <form [formGroup]="ngForm" (ngSubmit)="onsubmit()">
-              <div class="form-group">
-                <label>Nom du produit:</label>
-                <input type="text" formControlName="nameProduct" class="form-control" />
-              </div>
-  
-              <div class="form-group">
-                <label>Référence du produit:</label>
-                <input type="text" formControlName="referenceProduct" class="form-control" />
-              </div>
-  
-              <div class="form-group">
-                <label>Catégorie:</label>
-                <select formControlName="idCategory" class="form-control">
-                  <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
-                </select>
-              </div>
-  
-              <div class="form-group">
-                <label>Sous-catégorie:</label>
-                <select formControlName="idSousCategory" class="form-control">
-                  <option *ngFor="let sousCategory of sousCategories" [value]="sousCategory.id">{{ sousCategory.name }}</option>
-                </select>
-              </div>
-  
-              <div class="form-group">
-                <label>Description:</label>
-                <textarea formControlName="descriptionProduct" class="form-control"></textarea>
-              </div>
-  
-              <div class="form-group">
-                <label>Prix:</label>
-                <input type="number" formControlName="priceProduct" class="form-control" />
-              </div>
-  
-              <div class="form-group">
-                <label>Quantité:</label>
-                <input type="number" formControlName="quantityProduct" class="form-control" />
-              </div>
-  
-              <div class="form-group">
-                <label>Marque:</label>
-                <input type="text" formControlName="marqueProduct" class="form-control" />
-              </div>
-  
-              <div class="form-group">
-                <label>Remise:</label>
-                <input type="number" formControlName="discountProduct" class="form-control" />
-              </div>
-  
-              <div class="form-group">
-                <label>Image:</label>
-                <input type="file" (change)="onFileSelected($event)" class="form-control" />
-              </div>
-  
-              <button type="submit" class="btn btn-primary">Ajouter</button>
-            </form>
-          </div>
+  <div class="row">
+    <div class="col-md-6">
+      <form [formGroup]="ngForm" (ngSubmit)="onsubmit()">
+        <div class="form-group">
+          <label>Nom du produit:</label>
+          <input type="text" formControlName="nameProduct" class="form-control" />
         </div>
-      </div>
+
+        <div class="form-group">
+          <label>Référence du produit:</label>
+          <input type="text" formControlName="referenceProduct" class="form-control" />
+        </div>
+
+        <div class="form-group">
+          <label>Catégorie:</label>
+          <select formControlName="idCategory" class="form-control">
+            <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Sous-catégorie:</label>
+          <select formControlName="idSousCategory" class="form-control">
+            <option *ngFor="let sousCategory of sousCategories" [value]="sousCategory.id">{{ sousCategory.name }}</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Description:</label>
+          <textarea formControlName="descriptionProduct" class="form-control"></textarea>
+        </div>
+      </form>
+    </div>
+
+    <div class="col-md-6">
+      <form [formGroup]="ngForm" (ngSubmit)="onsubmit()">
+        <div class="form-group">
+          <label>Prix:</label>
+          <input type="number" formControlName="priceProduct" class="form-control" />
+        </div>
+
+        <div class="form-group">
+          <label>Quantité:</label>
+          <input type="number" formControlName="quantityProduct" class="form-control" />
+        </div>
+
+        <div class="form-group">
+          <label>Marque:</label>
+          <input type="text" formControlName="marqueProduct" class="form-control" />
+        </div>
+
+        <div class="form-group">
+          <label>Remise:</label>
+          <input type="number" formControlName="discountProduct" class="form-control" />
+        </div>
+
+        <div class="form-group">
+          <label>Image:</label>
+          <input type="file" (change)="onFileSelected($event)" class="form-control" />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Ajouter</button>
+      </form>
     </div>
   </div>
-  
+</div>
+</div>
+
+

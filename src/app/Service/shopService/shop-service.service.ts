@@ -51,6 +51,13 @@ export class ShopServiceService {
     const url =  `http://localhost:9009/store/product/getproductbyid/${productId}`;
     return this.http.get<Product>(url);
   }
- 
+  getTopRecommendedProducts(): Observable<Product[]> {
+    return this.http.get<Product[]>("http://localhost:9009/store/product/getRecommandedProduct");
+  }
+
+  generateQrCode(productId: number): Observable<Blob> {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json', 'Accept': 'application/json' });
+    return this.http.get("http://localhost:9009/store/product/qrcode", { headers: headers, responseType: 'blob' });
+  }
   
   }

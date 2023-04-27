@@ -5,5 +5,8 @@ export class Product {
     priceProduct!: number;
     quantityProduct!: number;
     idCategory!: number;
+    image!: File;
+    discountProduct!: number;
+  marqueProduct!: string;
   }
   

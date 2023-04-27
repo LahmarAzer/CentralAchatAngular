@@ -1,0 +1,21 @@
+<div class="recommended-products">
+    <h2>Les produits les plus recommandés</h2>
+    <div class="product-list">
+      <ul>
+        <li *ngFor="let product of topRecommendedProducts">
+          <div class="product">
+            <div class="image-container">
+              <img [src]="getImage(product)" alt="{{product.nameProduct}}">
+            </div>
+            <div class="product-details">
+              <h3>{{ product.nameProduct }}</h3>
+              <p>{{ product.descriptionProduct }}</p>
+              <p>Prix: {{ product.priceProduct }} $</p>
+              <button>Ajouter au panier</button>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  

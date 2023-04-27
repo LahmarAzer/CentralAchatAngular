@@ -30,4 +30,8 @@ export class DetailsproductComponent {
         }
       );
   }
+  getImage(prod: any): string {
+    return 'data:image/jpeg;base64,' + prod.imageProduct; // Replace "jpeg" with the actual image format
+  }
+  
 }

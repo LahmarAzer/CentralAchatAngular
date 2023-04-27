@@ -1,6 +1,9 @@
 <section role="main" class="content-body">
     <div class="row">
-      <div class="col-lg-12">
+      <div class="col-lg-6">
+        <img class="img-fluid" [src]="getImage(product)" alt="{{product?.nameProduct}}">
+      </div>
+      <div class="col-lg-6">
         <div class="card">
           <div class="card-header">
             <h3 class="card-title">{{ product?.nameProduct }}</h3>
@@ -10,11 +13,11 @@
               <li>Product Description: {{ product?.descriptionProduct }}</li>
               <li>Product Price: {{ product?.priceProduct }}</li>
               <li>Product Quantity: {{ product?.quantityProduct }}</li>
-              <li>Product Category: {{ product?.idCategory }}</li>
+              <li>discountProduct: {{ product?.discountProduct }}</li>
+              <li>marqueProduct : {{ product?.marqueProduct }}</li>
             </ul>
           </div>
         </div>
       </div>
     </div>
   </section>
-  
