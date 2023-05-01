@@ -54,10 +54,16 @@ export class ShopServiceService {
   getTopRecommendedProducts(): Observable<Product[]> {
     return this.http.get<Product[]>("http://localhost:9009/store/product/getRecommandedProduct");
   }
+  updatePost(product:Product,idUser: number): Observable<Product> {
+    const url = `http://localhost:9009/store/product/updateproduct/${idUser}/${product.idProduct}`;
+    return this.http.put<Product>(url, product);
+  }
 
   generateQrCode(productId: number): Observable<Blob> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json', 'Accept': 'application/json' });
     return this.http.get("http://localhost:9009/store/product/qrcode", { headers: headers, responseType: 'blob' });
   }
+
+
   
   }

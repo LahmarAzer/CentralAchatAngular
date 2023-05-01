@@ -46,7 +46,7 @@ const routes: Routes = [{
       component:AddproductComponent
     },
     {
-      path:'modifyproduct',
+      path:'modifyproduct/:id',
       component:ModifyproductComponent
     },
     {

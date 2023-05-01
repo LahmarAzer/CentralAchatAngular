@@ -1,5 +1,7 @@
+import { Rating } from "./Rating";
+
 export class Product {
-    id!: number;
+    idProduct!: number;
     nameProduct!: string;
     descriptionProduct!: string;
     priceProduct!: number;
@@ -7,6 +9,9 @@ export class Product {
     idCategory!: number;
     image!: File;
     discountProduct!: number;
-  marqueProduct!: string;
+    marqueProduct!: string;
+    referenceProduct!:string;
+    ratings!: Rating[]; // ajout de la propriété ratings
   }
+  
   
