@@ -1,64 +1,74 @@
-<div class="card">
 <div class="container">
-  <div class="row">
-    <div class="col-md-6">
-      <form [formGroup]="ngForm" (ngSubmit)="onsubmit()">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <form [formGroup]="ngForm" (ngSubmit)="onsubmit()" class="border p-4">
         <div class="form-group">
-          <label>Nom du produit:</label>
-          <input type="text" formControlName="nameProduct" class="form-control" />
+          <label for="nameProduct">Nom du produit:</label>
+          <input type="text" formControlName="nameProduct" class="form-control" id="nameProduct"  />
+          <div *ngIf="ngForm.get('nameProduct')?.invalid && ngForm.get('nameProduct')?.touched" class="alert alert-danger mt-2">error name product.</div>
         </div>
 
         <div class="form-group">
-          <label>Référence du produit:</label>
-          <input type="text" formControlName="referenceProduct" class="form-control" />
+          <label for="referenceProduct">Référence du produit:</label>
+          <input type="text" formControlName="referenceProduct" class="form-control" id="referenceProduct" />
+          <div *ngIf="ngForm.get('referenceProduct')?.invalid && ngForm.get('referenceProduct')?.touched" class="alert alert-danger mt-2">ref error.</div>
+
         </div>
 
         <div class="form-group">
-          <label>Catégorie:</label>
-          <select formControlName="idCategory" class="form-control">
+          <label for="idCategory">Catégorie:</label>
+          <select formControlName="idCategory" class="form-control" id="idCategory">
             <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
+            <div *ngIf="ngForm.get('idCategory')?.invalid && ngForm.get('idCategory')?.touched" class="alert alert-danger mt-2">categorie error.</div>
+
           </select>
         </div>
 
         <div class="form-group">
-          <label>Sous-catégorie:</label>
-          <select formControlName="idSousCategory" class="form-control">
+          <label for="idSousCategory">Sous-catégorie:</label>
+          <select formControlName="idSousCategory" class="form-control" id="idSousCategory">
             <option *ngFor="let sousCategory of sousCategories" [value]="sousCategory.id">{{ sousCategory.name }}</option>
           </select>
         </div>
 
         <div class="form-group">
-          <label>Description:</label>
-          <textarea formControlName="descriptionProduct" class="form-control"></textarea>
-        </div>
-      </form>
-    </div>
+          <label for="descriptionProduct">Description:</label>
+          <textarea formControlName="descriptionProduct" class="form-control" id="descriptionProduct"></textarea>
+          <div *ngIf="ngForm.get('descriptionProduct')?.invalid && ngForm.get('descriptionProduct')?.touched" class="alert alert-danger mt-2">description error.</div>
 
-    <div class="col-md-6">
-      <form [formGroup]="ngForm" (ngSubmit)="onsubmit()">
-        <div class="form-group">
-          <label>Prix:</label>
-          <input type="number" formControlName="priceProduct" class="form-control" />
         </div>
 
         <div class="form-group">
-          <label>Quantité:</label>
-          <input type="number" formControlName="quantityProduct" class="form-control" />
+          <label for="priceProduct">Prix:</label>
+          <input type="number" formControlName="priceProduct" class="form-control" id="priceProduct" />
+          <div *ngIf="ngForm.get('priceProduct')?.invalid && ngForm.get('priceProduct')?.touched" class="alert alert-danger mt-2">prix error.</div>
+
         </div>
 
         <div class="form-group">
-          <label>Marque:</label>
-          <input type="text" formControlName="marqueProduct" class="form-control" />
+          <label for="quantityProduct">Quantité:</label>
+          <input type="number" formControlName="quantityProduct" class="form-control" id="quantityProduct" />
+          <div *ngIf="ngForm.get('quantityProduct')?.invalid && ngForm.get('quantityProduct')?.touched" class="alert alert-danger mt-2">quantity error.</div>
+
         </div>
 
         <div class="form-group">
-          <label>Remise:</label>
-          <input type="number" formControlName="discountProduct" class="form-control" />
+          <label for="marqueProduct">Marque:</label>
+          <input type="text" formControlName="marqueProduct" class="form-control" id="marqueProduct" />
+          <div *ngIf="ngForm.get('marqueProduct')?.invalid && ngForm.get('marqueProduct')?.touched" class="alert alert-danger mt-2">marque error.</div>
+
         </div>
 
         <div class="form-group">
-          <label>Image:</label>
-          <input type="file" (change)="onFileSelected($event)" class="form-control" />
+          <label for="discountProduct">Remise:</label>
+          <input type="number" formControlName="discountProduct" class="form-control" id="discountProduct" />
+          <div *ngIf="ngForm.get('quantityProduct')?.invalid && ngForm.get('quantityProduct')?.touched" class="alert alert-danger mt-2">discount error.</div>
+
+        </div>
+
+        <div class="form-group">
+          <label for="image">Image:</label>
+          <input type="file" (change)="onFileSelected($event)" class="form-control-file" id="image" />
         </div>
 
         <button type="submit" class="btn btn-primary">Ajouter</button>
@@ -66,6 +76,3 @@
     </div>
   </div>
 </div>
-</div>
-
-

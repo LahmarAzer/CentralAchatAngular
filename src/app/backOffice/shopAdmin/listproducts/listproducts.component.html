@@ -34,7 +34,9 @@
                 <td>{{prod.quantityProduct}}</td>
                 <td>{{prod.nameProduct}}</td>
                 <td>{{prod.referenceProduct}}</td>
-                <td><img [src]="prod.imageProduct" ></td>
+                <!--<td><img [src]="prod.imageProduct" ></td>-->
+                <td><img class="img-fluid" [src]="getImage(prod)" alt="{{prod?.nameProduct}}"></td>
+
                 <!--<td>{{prod.discountProduct}}</td>-->
                 <td>{{prod.marqueProduct}}</td>
                 <!--<td>{{prod.dateCreationProduct}}</td> -->
