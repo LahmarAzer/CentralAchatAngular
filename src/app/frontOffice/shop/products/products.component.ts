@@ -19,6 +19,8 @@ export class ProductsComponent {
   currentPage: number = 1;
   pageSize: number = 6;
   pagesToShow: number[] = [];
+  idClient = 1;
+
 
 
   constructor(private service:ShopServiceService, private ratingService: RatingserviceService){}
@@ -40,19 +42,7 @@ getImage(prod: any): string {
   return 'data:image/jpeg;base64,' + prod.imageProduct; // Replace "jpeg" with the actual image format
 }
 
-submitRating(productId: number): void {
-  this.ratingService.addRating(this.rating, productId, this.userId).subscribe(res => {
-    console.log('Rating added:', res);
-    // mettre à jour la liste des produits ici si nécessaire
-  });
-}
 
-updateRating(ratingId: number): void {
-  this.ratingService.updateRating(this.rating, ratingId, this.userId).subscribe(res => {
-    console.log('Rating updated:', res);
-    // mettre à jour la liste des produits ici si nécessaire
-  });
-}
 getArrayOfPage(totalPage: number): number[] {
   const pageArray: number[] = [];
   for (let i = 1; i <= totalPage; i++) {
@@ -74,6 +64,16 @@ goToPage(page: number) {
   this.currentPage = page;
 }
 
+ajouterProduitFavori(idProduit: number) {
+  this.service.addFavori(this.idClient, idProduit).subscribe(
+    data => {
+      // Mettre à jour les produits
+      const produit = this.products.find(p => p.idProduct === idProduit);
+      produit.estDansFavoris = !produit.estDansFavoris;
+    },
+    error => console.log(error)
+  );
+}
 
 
 

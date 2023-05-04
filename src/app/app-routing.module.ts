@@ -14,6 +14,7 @@ import { ModifyproductComponent } from './backOffice/shopAdmin/modifyproduct/mod
 import { ListproductsComponent } from './backOffice/shopAdmin/listproducts/listproducts.component';
 import { DetailsproductComponent } from './frontOffice/shop/detailsproduct/detailsproduct.component';
 import { RecommandedproductsComponent } from './frontOffice/shop/recommandedproducts/recommandedproducts.component';
+import { ListeFavorisComponent } from './frontOffice/shop/liste-favoris/liste-favoris.component';
 
 const routes: Routes = [{
 
@@ -88,7 +89,11 @@ const routes: Routes = [{
     {
       path:'recommandedproducts',
      component: RecommandedproductsComponent
-   }
+   },
+   {
+    path:'listefavoris',
+   component: ListeFavorisComponent
+ }
     
   ]
 }

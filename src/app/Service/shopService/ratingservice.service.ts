@@ -11,11 +11,12 @@ export class RatingserviceService {
   constructor(private http: HttpClient) { }
   private baseUrl = 'http://localhost:9009/store/raitingProduct';
 
-  addRating(rating: Rating, productId: number, userId: number): Observable<Rating> {
-    return this.http.post<Rating>(`${this.baseUrl}/${productId}/${userId}`, rating);
-  }
-  updateRating(rating: Rating, ratingId: number, userId: number): Observable<Rating> {
-    return this.http.put<Rating>(`${this.baseUrl}/${ratingId}/${userId}`, rating);
+  getProductRating(productId: number): Observable<number> {
+    const url = `${this.baseUrl}/products/${productId}/rating`;
+    return this.http.get<number>(url);
   }
  
+  addRating(ratingProduct: any, productId: number, userId: number): Observable<any> {
+    return this.http.post<any>(`${this.baseUrl}/api/rating/addRatingProduct/${productId}/${userId}`, ratingProduct);
+  }
 }

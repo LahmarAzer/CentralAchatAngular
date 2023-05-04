@@ -14,6 +14,9 @@ export class ShopServiceService {
   getProducts():Observable<any[]>{
     return this.http.get<any[]>("http://localhost:9009/store/product/getallproduct")
   }
+  getProductsFavoris(idUser: number):Observable<any[]>{
+    return this.http.get<any[]>(`http://localhost:9009/store/product/clients/${idUser}/favoris`)
+  }
   //addproduct(product:any){
     //return this.http.post<any>("http://localhost:9009/store/product/addproduit",product,this.httpOptions) }
     addProduct(idUser: number, idCategory: number, idSousCategory: number,
@@ -62,6 +65,11 @@ export class ShopServiceService {
   generateQrCode(productId: number): Observable<Blob> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json', 'Accept': 'application/json' });
     return this.http.get("http://localhost:9009/store/product/qrcode", { headers: headers, responseType: 'blob' });
+  }
+
+  private baseUrl = 'http://localhost:9009/store/product';
+  addFavori(idClient: number, idProduit: number): Observable<any> {
+    return this.http.post(`${this.baseUrl}/favoris/${idClient}/${idProduit}`, null);
   }
 
 

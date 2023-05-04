@@ -10,46 +10,21 @@
 				<p class="card-text">{{prod.descriptionProduct}}</p>
 				<p class="card-text">{{prod.priceProduct}}€</p>
 				<div class="d-flex justify-content-between align-items-center">
-				  <div class="btn-group">
-					<a [routerLink]="['/front/detailproduct', prod.idProduct]" class="btn btn-sm btn-outline-secondary">Voir les détails</a>
-				  </div>
+					<div class="btn-group">
+						<a [routerLink]="['/front/detailproduct', prod.idProduct]" class="btn btn-sm btn-outline-secondary">Voir les détails</a>
+						<button class="btn btn-sm btn-outline-secondary" (click)="ajouterProduitFavori(prod.idProduct)">
+						  {{prod.estDansFavoris ? "❤️" : "🤍"}}
+						</button>
+					  </div>
+					  
 				  <small class="text-muted">{{prod.referenceProduct}}</small>
 				</div>
-  
-				<!-- Rating section -->
-				<div *ngIf="prod.ratingProduct">
-				  <p>Rating: {{ prod.ratingProduct.nbrEtoilesProduct }}/5</p>
-				  <p>Review: {{ prod.ratingProduct.reviewProduct }}</p>
-				</div>
-  
-				<form *ngIf="isLoggedIn" (ngSubmit)="submitRating(prod.idProduct)">
-				  <div class="form-group">
-					<label for="stars">Number of stars:</label>
-					<select id="stars" name="stars" [(ngModel)]="rating.nbrEtoilesProduct" required class="form-control">
-					  <option value="">Select</option>
-					  <option *ngFor="let star of [1, 2, 3, 4, 5]">{{ star }}</option>
-					</select>
-				  </div>
-  
-				  <div class="form-group">
-					<label for="review">Review:</label>
-					<textarea id="review" name="review" [(ngModel)]="rating.reviewProduct" required class="form-control"></textarea>
-				  </div>
-  
-				  <button type="submit" class="btn btn-primary">Submit Rating</button>
-				</form>
-				<!-- End of rating section -->
 			  </div>
 			</div>
 		  </div>
 		</div>
 	  </div>
 	</div>
-	<!-- <div class="pagination">
-		<span>Page {{ currentPage }} sur {{ totalPages }}</span>
-		<button [disabled]="currentPage == 1" (click)="previousPage()">Précédent</button>
-		<button [disabled]="currentPage == totalPages" (click)="nextPage()">Suivant</button>
-	</div> -->
 
 	<nav aria-label="Pagination">
 		<ul class="pagination justify-content-center">

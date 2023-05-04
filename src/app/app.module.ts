@@ -28,6 +28,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { DetailsproductComponent } from './frontOffice/shop/detailsproduct/detailsproduct.component';
 import { RecommandedproductsComponent } from './frontOffice/shop/recommandedproducts/recommandedproducts.component';
 import { QrCodeServiceComponent } from './frontOffice/shop/qr-code-service/qr-code-service.component';
+import { ListeFavorisComponent } from './frontOffice/shop/liste-favoris/liste-favoris.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { QrCodeServiceComponent } from './frontOffice/shop/qr-code-service/qr-co
     DetailsproductComponent,
     RecommandedproductsComponent,
     QrCodeServiceComponent,
+    ListeFavorisComponent,
   ],
   imports: [
     BrowserModule,
